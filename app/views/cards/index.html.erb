@@ -1,0 +1,26 @@
+<% card1value = rand(1..13)
+card1suit = rand(1..4)
+card2value = rand(1..13)
+card2suit = rand(1..4)
+
+cardvalues = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"]
+suit = ["hearts", "diamonds", "spades", "clubs"]
+
+
+%>
+
+
+<h1>Blackjack</h1>
+<p>
+<%=cardvalues[card1value - 1]%> of <%=suit[card1suit - 1]%>
+<p>
+<%=cardvalues[card2value - 1]%> of <%=suit[card2suit - 1]%>
+
+<p>
+    <img src="/images/cards/<%=cardvalues[card1value - 1]%>_of_<%=suit[card1suit - 1]%>.svg">
+    <img src="/images/cards/<%=cardvalues[card2value - 1]%>_of_<%=suit[card2suit - 1]%>.svg">
+</p>
+
+</p>
+
+
