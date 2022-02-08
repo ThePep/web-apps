@@ -1,24 +1,33 @@
-<% card1value = rand(1..13)
-card1suit = rand(1..4)
-card2value = rand(1..13)
-card2suit = rand(1..4)
+<% 
+cardvalues = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"]
+suits = ["hearts", "diamonds", "spades", "clubs"]
 
-cardvalues = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"]
-suit = ["hearts", "diamonds", "spades", "clubs"]
+deck = []
+for cardvalue in cardvalues
+    for suit in suits
+        deck<<"#{cardvalue}_of_#{suit}"
+    end
+end
 
+shuffled_deck = deck.shuffle
+hand = shuffled_deck[0,5]
 
 %>
 
 
-<h1>Blackjack</h1>
+<h1>Welcome to ENTR - 451 blackjack</h1>
 <p>
-<%=cardvalues[card1value - 1]%> of <%=suit[card1suit - 1]%>
+    <li><%=hand[0]%>
 <p>
-<%=cardvalues[card2value - 1]%> of <%=suit[card2suit - 1]%>
+ <%for card in hand
+    <img src="/images/cards/<%=hand[0]%>.svg"
+ end %>
+
+
+</p>
 
 <p>
-    <img src="/images/cards/<%=cardvalues[card1value - 1]%>_of_<%=suit[card1suit - 1]%>.svg">
-    <img src="/images/cards/<%=cardvalues[card2value - 1]%>_of_<%=suit[card2suit - 1]%>.svg">
+    <a href="/cards">Deal again!</a>
 </p>
 
 </p>
